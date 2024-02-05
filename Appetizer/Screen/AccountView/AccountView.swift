@@ -22,11 +22,11 @@ struct AccountView: View {
                     DatePicker("Birthday", selection: $viewModel.birthdate, displayedComponents: .date)
                         .datePickerStyle(.automatic)
                     Button(action: {
-                        print("save")
+                        viewModel.saveChanges()
                     }, label: {
                         Text("Save Changes")
                     })
-                    .textInputAutocapitalization(.none)
+                    .textInputAutocapitalization(.never)
                     .autocorrectionDisabled(true)
                 } header: {
                     Text("PERSONAL INFO")
@@ -40,6 +40,11 @@ struct AccountView: View {
                 .tint(Color(.accent))
             }
             .navigationTitle("🧾 Account")
+            .alert(item: $viewModel.alertItem) { alert in
+                Alert(title: alert.title,
+                      message: alert.message,
+                      dismissButton: alert.dismissButton)
+            }
         }
     }
 }
