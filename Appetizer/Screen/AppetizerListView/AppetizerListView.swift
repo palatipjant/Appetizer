@@ -11,7 +11,7 @@ struct AppetizerListView: View {
     
     @StateObject var viewModel = AppetizerListViewMedel()
     @State private var isShowingDetail = false
-    @State var appetizer_card: Appetizer = Mockdata.sampleAppetizer
+    @State var appetizer_card: Appetizer?
     
     var body: some View {
         ZStack{
@@ -25,20 +25,24 @@ struct AppetizerListView: View {
                 }
                 .listStyle(.plain)
                 .navigationTitle("🍟 Apperizers")
+                .disabled(isShowingDetail)
             }
             .onAppear(perform: {
                 viewModel.getAppetizers()
             })
-            
+            .blur(radius: isShowingDetail ? 20 : 0)
             if isShowingDetail {
-                AppetizerCardView(appetizer: appetizer_card)
+                AppetizerCardView(appetizer: appetizer_card!, 
+                                  isShowingDetail: $isShowingDetail)
             }
             if viewModel.isLoading {
                 LoadingView()
             }
         }
         .alert(item: $viewModel.alertItem) { alert in
-            Alert(title: alert.title, message: alert.message, dismissButton: alert.dismissButton)
+            Alert(title: alert.title, 
+                  message: alert.message,
+                  dismissButton: alert.dismissButton)
         }
     }
 }

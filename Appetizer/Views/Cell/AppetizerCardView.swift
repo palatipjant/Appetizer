@@ -10,21 +10,22 @@ import SwiftUI
 struct AppetizerCardView: View {
     
     let appetizer: Appetizer
+    @Binding var isShowingDetail: Bool
     
     var body: some View {
         VStack(spacing: 20){
-            Image("asian-frand-steak")
-                .resizable()
+            AppetizerRemoteImage(urlString: appetizer.imageURL)
                 .frame(width: 320, height: 225)
                 .scaledToFit()
                 .offset(y: -20)
             VStack(spacing: 20){
                 Text(appetizer.name)
-                    .font(.title)
+                    .font(.title2)
                     .fontWeight(.semibold)
                 Text(appetizer.description)
-                    .font(.system(size: 18))
+                    .font(.system(size: 16))
                     .multilineTextAlignment(.center)
+                    .padding(.horizontal)
                     .padding(.bottom)
                 HStack(spacing: 40){
                     VStack{
@@ -53,14 +54,7 @@ struct AppetizerCardView: View {
             Button {
                 //
             } label: {
-                Rectangle()
-                    .frame(width: 220, height: 50)
-                    .clipShape(.rect(cornerRadius: 12))
-                    .overlay {
-                        Text("$\(Mockdata.sampleAppetizer.price, specifier: "%.2f") - Add To Order")
-                            .foregroundStyle(.white)
-                            .bold()
-                }
+                APButton(title: "$\(Mockdata.sampleAppetizer.price, specifier: "%.2f") - Add To Order")
             }
         }
         .frame(width: 320, height: 525)
@@ -69,13 +63,9 @@ struct AppetizerCardView: View {
         .shadow(radius: 40)
         .overlay(
             Button(action: {
-            //
+                isShowingDetail = false
             }, label: {
-                Image(systemName: "xmark.circle.fill")
-                    .resizable()
-                    .frame(width: 30, height: 30)
-                    .foregroundStyle(.white)
-                    .padding()
+                XDismissButton()
             })
             , alignment: .topTrailing)
         }
@@ -84,5 +74,5 @@ struct AppetizerCardView: View {
 
 
 #Preview {
-    AppetizerCardView(appetizer: Mockdata.sampleAppetizer)
+    AppetizerCardView(appetizer: Mockdata.sampleAppetizer, isShowingDetail: .constant(true))
 }
