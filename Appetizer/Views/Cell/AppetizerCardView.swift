@@ -28,27 +28,9 @@ struct AppetizerCardView: View {
                     .padding(.horizontal)
                     .padding(.bottom)
                 HStack(spacing: 40){
-                    VStack{
-                        Text("Calories")
-                            .font(.footnote)
-                            .fontWeight(.regular)
-                        Text("\(appetizer.calories)")
-                            .fontWeight(.light)
-                    }
-                    VStack{
-                        Text("Carbs")
-                            .font(.footnote)
-                            .fontWeight(.regular)
-                        Text("\(appetizer.carbs) g")
-                            .fontWeight(.light)
-                    }
-                    VStack{
-                        Text("Protein")
-                            .font(.footnote)
-                            .fontWeight(.regular)
-                        Text("\(appetizer.protein) g")
-                            .fontWeight(.light)
-                    }
+                    NutritionInfo(title: "Calories", value: appetizer.calories)
+                    NutritionInfo(title: "Carbs", value: appetizer.carbs)
+                    NutritionInfo(title: "Protein", value: appetizer.protein)
                 }
             }
             Button {
@@ -71,7 +53,21 @@ struct AppetizerCardView: View {
         }
     }
 
-
+struct NutritionInfo: View {
+    
+    let title: String
+    let value: Int
+    
+    var body: some View{
+        VStack{
+            Text(title)
+                .font(.footnote)
+                .fontWeight(.regular)
+            Text("\(value)")
+                .fontWeight(.light)
+        }
+    }
+}
 
 #Preview {
     AppetizerCardView(appetizer: Mockdata.sampleAppetizer, isShowingDetail: .constant(true))
