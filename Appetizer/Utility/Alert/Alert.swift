@@ -46,4 +46,8 @@ struct AlertContext {
     static let invalidUserData = AlertItem(title: Text("Profile"),
                                         message: Text("Your Information save/retrieve process can't be done."),
                                         dismissButton: .default(Text("OK")))
+    
+    static let GeneralError = AlertItem(title: Text("Appetizer"),
+                                        message: Text("Something wrong with the data.\nPlease contact support."),
+                                        dismissButton: .default(Text("OK")))
 }
