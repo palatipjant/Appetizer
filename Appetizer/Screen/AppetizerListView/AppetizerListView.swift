@@ -10,12 +10,18 @@ import SwiftUI
 struct AppetizerListView: View {
     
     @StateObject var viewModel = AppetizerListViewMedel()
+    @State private var isShowingDetail = false
+    @State var appetizer_card: Appetizer = Mockdata.sampleAppetizer
     
     var body: some View {
         ZStack{
             NavigationStack{
-                List(viewModel.appetizers) { apperizer in
-                    AppetizerListCell(appetizer: apperizer)
+                List(viewModel.appetizers) { appetizer in
+                    AppetizerListCell(appetizer: appetizer)
+                        .onTapGesture {
+                            isShowingDetail = true
+                            appetizer_card = appetizer
+                        }
                 }
                 .listStyle(.plain)
                 .navigationTitle("🍟 Apperizers")
@@ -23,6 +29,10 @@ struct AppetizerListView: View {
             .onAppear(perform: {
                 viewModel.getAppetizers()
             })
+            
+            if isShowingDetail {
+                AppetizerCardView(appetizer: appetizer_card)
+            }
             if viewModel.isLoading {
                 LoadingView()
             }
