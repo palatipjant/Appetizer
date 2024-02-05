@@ -26,6 +26,7 @@
 		649895912B6BDCB5008D6CFD /* AppetizerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649895902B6BDCB5008D6CFD /* AppetizerCardView.swift */; };
 		64EEB3FF2B707D3600AF6B80 /* APButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EEB3FE2B707D3600AF6B80 /* APButton.swift */; };
 		64EEB4012B707E0900AF6B80 /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EEB4002B707E0900AF6B80 /* XDismissButton.swift */; };
+		64EEB4032B70E99200AF6B80 /* AccountViewMedel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EEB4022B70E99200AF6B80 /* AccountViewMedel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		649895902B6BDCB5008D6CFD /* AppetizerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerCardView.swift; sourceTree = "<group>"; };
 		64EEB3FE2B707D3600AF6B80 /* APButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APButton.swift; sourceTree = "<group>"; };
 		64EEB4002B707E0900AF6B80 /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		64EEB4022B70E99200AF6B80 /* AccountViewMedel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewMedel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		649895852B6BDB17008D6CFD /* AccountView */ = {
 			isa = PBXGroup;
 			children = (
+				64EEB4022B70E99200AF6B80 /* AccountViewMedel.swift */,
 				64904CD92B66AD670056C878 /* AccountView.swift */,
 			);
 			path = AccountView;
@@ -296,6 +299,7 @@
 			files = (
 				645712412B68D90B003BD1C7 /* AppetizerListCell.swift in Sources */,
 				6498957A2B6BA37D008D6CFD /* AppetizerListViewMedel.swift in Sources */,
+				64EEB4032B70E99200AF6B80 /* AccountViewMedel.swift in Sources */,
 				64EEB4012B707E0900AF6B80 /* XDismissButton.swift in Sources */,
 				645712452B68FB15003BD1C7 /* APError.swift in Sources */,
 				64904CDA2B66AD670056C878 /* AccountView.swift in Sources */,
