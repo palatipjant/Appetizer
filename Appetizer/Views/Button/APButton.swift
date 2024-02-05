@@ -13,7 +13,7 @@ struct APButton: View {
     
     var body: some View {
         Rectangle()
-            .frame(width: 220, height: 50)
+            .frame(width: 270, height: 50)
             .clipShape(.rect(cornerRadius: 12))
             .overlay {
                 Text(title)

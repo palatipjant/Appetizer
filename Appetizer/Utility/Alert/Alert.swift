@@ -38,4 +38,12 @@ struct AlertContext {
     static let invalidEmail = AlertItem(title: Text("Form not complete"),
                                         message: Text("Email invalid."),
                                         dismissButton: .default(Text("OK")))
+    
+    static let userSaveSuccess = AlertItem(title: Text("Profile"),
+                                        message: Text("Your Information was successfully done."),
+                                        dismissButton: .default(Text("OK")))
+    
+    static let invalidUserData = AlertItem(title: Text("Profile"),
+                                        message: Text("Your Information save/retrieve process can't be done."),
+                                        dismissButton: .default(Text("OK")))
 }

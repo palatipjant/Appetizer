@@ -9,24 +9,42 @@ import SwiftUI
 
 final class AccountViewMedel: ObservableObject{
     
-    @Published var fname: String = ""
-    @Published var lname: String = ""
-    @Published var email: String = ""
-    @Published var birthdate: Date = Date()
-    @Published var extraNap: Bool = false
-    @Published var frequentRefills: Bool = false
-    
-    
+    @AppStorage("user") private var userData: Data?
+    @Published var user = User()
     @Published var alertItem: AlertItem?
+    
+    
+    func saveChanges() {
+        guard isValidForm else { return }
+        
+        do {
+            let data = try JSONEncoder().encode(user)
+            userData = data
+            alertItem = AlertContext.userSaveSuccess
+        } catch {
+            alertItem = AlertContext.invalidUserData
+        }
+    }
+    
+    func retrieveUser() {
+        guard let userData = userData else { return }
+        
+        do {
+            user = try JSONDecoder().decode(User.self, from: userData)
+        } catch {
+            alertItem = AlertContext.invalidUserData
+        }
+        
+    }
     
     var isValidForm: Bool {
         
-        guard !fname.isEmpty &&  !lname.isEmpty && !email.isEmpty else {
+        guard !user.fname.isEmpty &&  !user.lname.isEmpty && !user.email.isEmpty else {
             alertItem = AlertContext.invalidForm
             return false
         }
         
-        guard email.isValidEmail else {
+        guard user.email.isValidEmail else {
             alertItem = AlertContext.invalidEmail
             return false
         }
@@ -34,9 +52,4 @@ final class AccountViewMedel: ObservableObject{
         return true
     }
     
-    func saveChanges() {
-        guard isValidForm else { return }
-        
-        print("save changes complete")
-    }
 }

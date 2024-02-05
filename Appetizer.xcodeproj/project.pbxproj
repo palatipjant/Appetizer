@@ -29,6 +29,7 @@
 		64EEB4032B70E99200AF6B80 /* AccountViewMedel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EEB4022B70E99200AF6B80 /* AccountViewMedel.swift */; };
 		64EEB4052B70EBB700AF6B80 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EEB4042B70EBB700AF6B80 /* String+Ext.swift */; };
 		64EEB4082B70F82200AF6B80 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EEB4072B70F82200AF6B80 /* User.swift */; };
+		64EEB40B2B71243200AF6B80 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EEB40A2B71243200AF6B80 /* EmptyState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		64EEB4022B70E99200AF6B80 /* AccountViewMedel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewMedel.swift; sourceTree = "<group>"; };
 		64EEB4042B70EBB700AF6B80 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		64EEB4072B70F82200AF6B80 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		64EEB40A2B71243200AF6B80 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 		6498958C2B6BDBC6008D6CFD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				64EEB4092B71241700AF6B80 /* EmptyState */,
 				64EEB3FD2B707D1B00AF6B80 /* Button */,
 				6498958F2B6BDBE2008D6CFD /* Image */,
 				6498958E2B6BDBD2008D6CFD /* UIComponent  */,
@@ -231,6 +234,14 @@
 				64EEB4002B707E0900AF6B80 /* XDismissButton.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		64EEB4092B71241700AF6B80 /* EmptyState */ = {
+			isa = PBXGroup;
+			children = (
+				64EEB40A2B71243200AF6B80 /* EmptyState.swift */,
+			);
+			path = EmptyState;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +329,7 @@
 				649895912B6BDCB5008D6CFD /* AppetizerCardView.swift in Sources */,
 				645712432B68F8B6003BD1C7 /* NetworkManager.swift in Sources */,
 				64EEB4052B70EBB700AF6B80 /* String+Ext.swift in Sources */,
+				64EEB40B2B71243200AF6B80 /* EmptyState.swift in Sources */,
 				649895822B6BD765008D6CFD /* RemoteImage.swift in Sources */,
 				64904CD82B66AD3F0056C878 /* AppetizerListView.swift in Sources */,
 				6498957C2B6BA5B5008D6CFD /* Alert.swift in Sources */,
