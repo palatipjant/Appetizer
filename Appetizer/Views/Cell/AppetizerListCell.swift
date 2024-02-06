@@ -18,6 +18,23 @@ struct AppetizerListCell: View {
                 .scaledToFit()
                 .clipShape(.rect(cornerRadius: 10))
                 .padding(.trailing, 10)
+            
+//            AsyncImage(url: URL(string: appetizer.imageURL)) { Image in
+//                Image
+//                    .resizable()
+//                    .frame(width: 120, height: 90)
+//                    .scaledToFit()
+//                    .clipShape(.rect(cornerRadius: 10))
+//                    .padding(.trailing, 10)
+//            } placeholder: {
+//                Image("food-placeholder")
+//                    .resizable()
+//                    .frame(width: 120, height: 90)
+//                    .scaledToFit()
+//                    .clipShape(.rect(cornerRadius: 10))
+//                    .padding(.trailing, 10)
+//            }
+
             VStack(alignment: .leading, spacing: 5) {
                 Text(appetizer.name)
                     .font(.title2)
